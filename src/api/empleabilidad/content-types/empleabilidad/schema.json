@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empleabilidads",
+  "info": {
+    "singularName": "empleabilidad",
+    "pluralName": "empleabilidads",
+    "displayName": "Empleabilidad"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Empleo": {
+      "type": "uid"
+    },
+    "Descripcion": {
+      "type": "richtext"
+    },
+    "imagenes": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "video": {
+      "allowedTypes": [
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Curriculo": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "feria_virtuals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feria-virtual.feria-virtual",
+      "mappedBy": "empleabilidads"
+    }
+  }
+}

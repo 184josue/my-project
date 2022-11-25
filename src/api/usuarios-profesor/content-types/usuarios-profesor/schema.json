@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios_profesors",
+  "info": {
+    "singularName": "usuarios-profesor",
+    "pluralName": "usuarios-profesors",
+    "displayName": "Usuarios_Profesores",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Profesores": {
+      "type": "uid"
+    },
+    "Nombre": {
+      "type": "string"
+    },
+    "Apellido": {
+      "type": "string"
+    },
+    "Correo": {
+      "type": "email"
+    },
+    "clave": {
+      "type": "password",
+      "required": true
+    },
+    "cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cursoss.cursoss",
+      "mappedBy": "usuarios_profesores"
+    },
+    "feria_virtuals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feria-virtual.feria-virtual",
+      "inversedBy": "usuarios_profesores"
+    }
+  }
+}

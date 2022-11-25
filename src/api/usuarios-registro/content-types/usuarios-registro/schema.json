@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "usuarios_registros",
+  "info": {
+    "singularName": "usuarios-registro",
+    "pluralName": "usuarios-registros",
+    "displayName": "Usuarios_Estudiantes",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_usuarios": {
+      "type": "uid"
+    },
+    "Nombre": {
+      "type": "string"
+    },
+    "Apellido": {
+      "type": "string"
+    },
+    "Correo": {
+      "type": "email"
+    },
+    "Clave": {
+      "type": "password",
+      "required": true
+    },
+    "cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cursoss.cursoss",
+      "mappedBy": "usuarios_estudiantes"
+    },
+    "compra_cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::compra-curso.compra-curso",
+      "inversedBy": "usuarios_estudiantes"
+    },
+    "estudiantes_avances": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::estudiantes-avance.estudiantes-avance",
+      "inversedBy": "usuarios_estudiantes"
+    },
+    "valoracion_cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::valoracion-curso.valoracion-curso",
+      "inversedBy": "usuarios_estudiantes"
+    },
+    "feria_virtuals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feria-virtual.feria-virtual",
+      "inversedBy": "usuarios_estudiantes"
+    }
+  }
+}

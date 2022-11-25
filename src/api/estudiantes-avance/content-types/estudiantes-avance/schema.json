@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "estudiantes_avances",
+  "info": {
+    "singularName": "estudiantes-avance",
+    "pluralName": "estudiantes-avances",
+    "displayName": "Estudiantes_avance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Avances": {
+      "type": "uid"
+    },
+    "Avances": {
+      "type": "float",
+      "default": 0,
+      "min": 0,
+      "max": 100
+    },
+    "usuarios_estudiantes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-registro.usuarios-registro",
+      "inversedBy": "estudiantes_avances"
+    }
+  }
+}

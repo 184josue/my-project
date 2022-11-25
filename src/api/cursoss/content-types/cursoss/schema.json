@@ -1,0 +1,57 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cursosses",
+  "info": {
+    "singularName": "cursoss",
+    "pluralName": "cursosses",
+    "displayName": "Cursos",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Cursos": {
+      "type": "uid"
+    },
+    "Nombre": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "richtext"
+    },
+    "Contenido": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Emitido": {
+      "type": "date"
+    },
+    "usuarios_estudiantes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-registro.usuarios-registro",
+      "inversedBy": "cursos"
+    },
+    "usuarios_profesores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-profesor.usuarios-profesor",
+      "inversedBy": "cursos"
+    },
+    "compra_cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::compra-curso.compra-curso",
+      "inversedBy": "cursos"
+    }
+  }
+}

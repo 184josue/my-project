@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compra_cursos",
+  "info": {
+    "singularName": "compra-curso",
+    "pluralName": "compra-cursos",
+    "displayName": "Compra_Curso"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Compras": {
+      "type": "uid"
+    },
+    "Precio": {
+      "type": "float"
+    },
+    "usuarios_estudiantes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-registro.usuarios-registro",
+      "inversedBy": "compra_cursos"
+    },
+    "cursos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cursoss.cursoss",
+      "inversedBy": "compra_cursos"
+    }
+  }
+}

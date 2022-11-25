@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "web_binars",
+  "info": {
+    "singularName": "web-binar",
+    "pluralName": "web-binars",
+    "displayName": "web_binar"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_web": {
+      "type": "uid"
+    },
+    "Descripcion": {
+      "type": "richtext"
+    },
+    "Imagen": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Contenido": {
+      "allowedTypes": [
+        "files",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "feria_virtuals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feria-virtual.feria-virtual",
+      "mappedBy": "web_binars"
+    }
+  }
+}

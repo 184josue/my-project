@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feria_virtuals",
+  "info": {
+    "singularName": "feria-virtual",
+    "pluralName": "feria-virtuals",
+    "displayName": "Feria Virtual",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_Feria": {
+      "type": "uid"
+    },
+    "Nombre": {
+      "type": "string"
+    },
+    "fecha": {
+      "type": "datetime"
+    },
+    "empleabilidads": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::empleabilidad.empleabilidad",
+      "inversedBy": "feria_virtuals"
+    },
+    "web_binars": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::web-binar.web-binar",
+      "inversedBy": "feria_virtuals"
+    },
+    "usuarios_estudiantes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-registro.usuarios-registro",
+      "inversedBy": "feria_virtuals"
+    },
+    "usuarios_profesores": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::usuarios-profesor.usuarios-profesor",
+      "inversedBy": "feria_virtuals"
+    }
+  }
+}
